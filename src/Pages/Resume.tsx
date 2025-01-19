@@ -16,9 +16,10 @@ function Resume() {
 
   return (
     <div className="Resume">
-        <Right2Item smallItem={<ProjectDescription name="Resume" skills="Last updated: 09/01/23" titles={[]} sections={[]}/>} bigItem={<iframe src="https://drive.google.com/file/d/1twDY4iUL66tbavStWcfUbufuG4r9VGai/preview" frameBorder="0" width="800em" max-width="100%" height="750em" allow="autoplay"></iframe>} page={0}/>
+        <Right2Item smallItem={<ProjectDescription name="CV" skills="Last updated: 01/17/25" titles={[]} sections={[]}/>} bigItem={
+          <iframe src="https://drive.google.com/file/d/1GVLTD68nDfNn1n-1p_FhY7EwP7LMa-s-/preview" 
+        frameBorder="0" width="800em" max-width="100%" height="750em" allow="autoplay"></iframe>} page={3}/>
 
-      <Footer />
     </div>
   );
 }

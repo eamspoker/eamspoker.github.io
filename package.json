@@ -1,7 +1,7 @@
 {
   "name": "emilyportfolio",
   "version": "0.1.0",
-  "homepage": "https://eamspoker.github.io/myportfolio",
+  "homepage": "https://emilyamspoker.me",
   "private": true,
   "dependencies": {
     "@emotion/react": "^11.11.1",
@@ -54,7 +54,7 @@
   },
   "devDependencies": {
     "@babel/preset-react": "^7.22.5",
-    "gh-pages": "^6.0.0",
+    "gh-pages": "^6.1.1",
     "react-router-dom": "^6.15.0"
   }
 }

@@ -8,11 +8,10 @@ import Footer from './Footer';
 type Props = {
   smallItem: React.ReactNode,
   bigItem: React.ReactNode,
-  optionalTitle?: React.ReactNode,
-  page: number,
+  
 }
-function Right2Item(props: Props) {
-  const {smallItem, bigItem, optionalTitle, page} = props;
+function Right2ItemNoTabbar(props: Props) {
+  const {smallItem, bigItem} = props;
 
   const Item = styled("div")(({ theme }) => ({
     padding: theme.spacing(1),
@@ -27,17 +26,6 @@ function Right2Item(props: Props) {
 
     
     <Grid container spacing={2}>
-
-        <Grid item xs={12}>
-        <Tabbar page={page} horizontal={true}/>
-        </Grid> 
-
-        <Grid item xs={12}>
-        {optionalTitle}
-        </Grid> 
-
-
-         
 
 
         <Grid item xs={12}>
@@ -66,4 +54,4 @@ function Right2Item(props: Props) {
 }
 
 
-export default Right2Item;
+export default Right2ItemNoTabbar;

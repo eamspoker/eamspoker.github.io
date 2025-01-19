@@ -3,16 +3,11 @@ import ReactDOM from 'react-dom/client';
 import Homepage from './Pages/Homepage';
 import reportWebVitals from './reportWebVitals';
 import { useLocation, useRoutes, Route, HashRouter } from "react-router-dom";
-import Projects from './Pages/Projects';
-import KhanAcademy from './Pages/ProjectPages/KhanAcademy';
-import FrameGame from './Pages/ProjectPages/TheFrameGame';
-import ClimateCoach from './Pages/ProjectPages/ClimateCoach';
-import CoffeeGuide from './Pages/ProjectPages/CoffeeGuide';
-import Golem from './Pages/ProjectPages/TheGolem';
-import Zoo from './Pages/ProjectPages/Zoo';
 import Resume from './Pages/Resume';
 import WrapperPage from './Pages/WrapperPage';
 import { AnimatePresence } from "framer-motion";
+import Research from './Pages/Research';
+import Games from './Pages/Games';
 
 function App() {
 
@@ -25,53 +20,23 @@ const location = useLocation();
           element: <WrapperPage element={<Homepage />}/>
         },
         {
-          path: "/projects",
+          path: "/research",
           element: (
-            <WrapperPage element={<Projects/>}/>
+            <WrapperPage element={<Research/>}/>
           )
         }, 
         {
-          path: "/khanacademy",
+          path: "/games",
           element: (
-            <WrapperPage element={<KhanAcademy/>}/>
+            <WrapperPage element={<Games/>}/>
           )
-        }, 
+        },
         {
-          path: "/framegame",
-          element: (
-            <WrapperPage element={<FrameGame/>}/>
-          )
-        }, 
-        {
-          path: "/climatecoach",
-          element: (
-            <WrapperPage element={<ClimateCoach/>}/>
-          )
-        }, 
-        {
-          path: "/coffeeguide",
-          element: (
-            <WrapperPage element={<CoffeeGuide/>}/>
-          )
-        }, 
-        {
-          path: "/golem",
-          element: (
-            <WrapperPage element={<Golem/>}/>
-          )
-        }, 
-        {
-          path: "/zoo",
-          element: (
-            <WrapperPage element={<Zoo/>}/>
-          )
-        }, 
-        {
-          path: "/resume",
+          path: "/cv",
           element: (
             <WrapperPage element={<Resume/>}/>
           )
-        }, 
+        },
       ]);
 
       if (!element) return null;

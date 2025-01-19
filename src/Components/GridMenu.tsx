@@ -41,7 +41,7 @@ function GridMenu(props: Props) {
         <Link to={components[index]}>
           <Paper style={paperStyle} elevation={2} >
            <h3>{title}</h3>
-           <p style={{fontSize:"1em",}}>{subtitles[index]}</p>
+           <p style={{fontSize:"1.0em",}}>{subtitles[index]}</p>
            </Paper>
            </Link>
         </Grid>);

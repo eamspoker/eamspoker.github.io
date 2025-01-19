@@ -1,11 +1,22 @@
-import { Paper } from '@mui/material';
-import { grey } from '@mui/material/colors';
+
+import SchoolIcon from '@mui/icons-material/School';
 import React from 'react';
+import Card from '../Components/Card';
+import GitHubIcon from '@mui/icons-material/GitHub';
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import { Link } from 'react-router-dom';
+import { Grid } from '@mui/material';
+import { IconButton } from '@mui/material';
 
 function Profile() {
 
-  const descriptionStyle = {
-    color: "grey",
+  const iconStyle = {
+    paddingTop: "30px",
+    paddingBottom: "30px",
+    margin: "10px",
+    color: "black"
+
+
   }
 
   const headerStyle = {
@@ -17,27 +28,51 @@ function Profile() {
 
 
   const pfpStyle = {
-    borderRadius: "50%",
-    width: "90%"
+    width: "100%",
+    padding: "0px",
+    display: "block",
+    justifyContent: "right"
 
   }
 
-  const paperStyle = {
-    borderRadius: "2%",
-    padding: "10px",
-  }
+
 
   return (
-    <Paper style={paperStyle} elevation={0} >
-    <header style={headerStyle}>
-        <img aria-aria-description="Emily looking off to the side, wearing her Khan Academy t-shirt." src={require("./pfp.jpeg")} style={pfpStyle}></img>
+    <Card top={<img alt="Emily looking forward and smiling." src={require("./pfp.jpg")} style={pfpStyle}></img>
+  } style={headerStyle}>
+     <Grid container spacing={0}>
 
-        <h1>
-          Hi, I'm Emily!
-        </h1>
-        <h5 style={descriptionStyle}>Thanks for visiting my personal website! I made this website with React using the Material UI Library. Check out the source code <a href="https://github.com/eamspoker/myportfolio/tree/master" target="_blank">here</a>.</h5>
-      </header>
-      </Paper>
+
+      <Grid className='centered 'item xs={4}>
+      <IconButton aria-label="Google Scholar" 
+      style={{ backgroundColor: 'transparent' }} onClick={() => window.open("https://scholar.google.com/citations?user=T4sy0-4AAAAJ&hl=en")}>
+      <SchoolIcon fontSize="large" style={iconStyle} />
+      </IconButton>
+      </Grid>
+
+
+      <Grid className='centered ' item xs={4}>
+      <IconButton aria-label="Github.com" style={{ backgroundColor: 'transparent' }}
+      onClick={() => window.open("https://github.com/eamspoker")}>
+
+      <GitHubIcon fontSize="large" style={iconStyle}/>
+      </IconButton>
+      </Grid>
+     
+      <Grid className='centered ' item xs={4}>
+      <IconButton aria-label="Linkedin.com" style={{ backgroundColor: 'transparent' }}
+      onClick={() => window.open("https://www.linkedin.com/in/emily-amspoker-52944b18a/")}>
+
+      <LinkedInIcon fontSize="large" style={iconStyle} />
+      </IconButton>
+      </Grid>
+
+
+      
+     </Grid>
+
+        
+      </Card>
   );
 }
 
