@@ -58,11 +58,10 @@ function Games() {
 
   let subtitles : string[] = ["15-466: Computer Game Programming", "60-418 Advanced ETB: Experimental Game Studio"];
 
-  let urls : string[] = ["https://www.youtube.com/embed/AKhp87ojgRw?si=qonBOek5m3LOV7Nq", "https://itch.io/embed-upload/9260872?color=ffffff"];
+  let urls : string[] = ["https://www.youtube.com/embed/AKhp87ojgRw?si=qonBOek5m3LOV7Nq", "https://www.youtube.com/embed/uikwbrc8q50?si=BW3Whz66sG80WCJX"];
 
-  let links : string[] = ["https://emilyamspoker.itch.io/code-shop", "https://itch.io/embed-upload/9260872?color=ffffff"];
+  let links : string[] = ["https://emilyamspoker.itch.io/code-shop", "https://emilyamspoker.itch.io/suburban-shift"];
 
-  let instructions : string[] = ["Visit the Itch.io page, download the game and supporting materials, and follow the instructions on the page.", "Click to start the game\nWASD to move\nCTRL-R or CMD-R to exit and restart"];
 
 
 
@@ -89,7 +88,7 @@ function Games() {
             } 
             smallItem = {<div><h2 style={{margin: "0px"}}> <b>Class: </b>{subtitles[index]}</h2>
                       <h2> <b>Link: </b> <a href={links[index]}>Itch.io Page</a></h2>
-                      <h2> <b>Instructions: </b>{instructions[index]}</h2></div>}
+                      <h2> <b>Instructions: </b>{"Visit the Itch.io page to see the game and supporting materials and follow the instructions on the page to play the game."}</h2></div>}
             bigItem={<iframe style={{border: "none"}} src={urls[index]} width="960" height="570"></iframe>}
             page={2}/>
         </Grid>
