@@ -30,7 +30,9 @@ function AboutMe() {
     </h2>}>
     <div style={aboutMeStyle}>
     <p style={descriptionStyle}>
-      I'm a senior at <a target="_blank" href="https://www.cmu.edu/">Carnegie Mellon University</a>. I study <a target="_blank" href="https://hcii.cmu.edu/academics/hci-undergrad/bs-human-computer-interaction">Human-Computer Interaction</a>, <a target="_blank" href="https://ideate.cmu.edu/undergraduate-programs/design-for-learning/index.html">Design For Learning</a>, and <a target="_blank" href="https://ideate.cmu.edu/undergraduate-programs/game-design/">Game Design</a>.
+      I'm a current PhD Student at <a target="_blank" href="https://www.gatech.edu/">Georgia Tech</a> 
+       in the <a target="_blank" href="https://www.cc.gatech.edu/degree-programs/phd-human-centered-computing">Human-Centered Computing program</a>. 
+      Specifically, I am advised by Dr. Jessica Roberts in the <a target="_blank" href="https://tiles.cc.gatech.edu/">Tiles Lab</a>.
     </p>
   
     </div>

@@ -55,9 +55,9 @@ function ResearchInterests() {
     <div style={cardContentStyle}>
         <p style={descriptionStyle}> In my research, I aim to: </p>
         <ul style={listStyle}>
-          <li><p style={{fontWeight: "bold"}}>🎮 Explore video games as a tool for education and accessibility.</p></li>
-          <li><p style={{fontWeight: "bold"}}>📚 Develop customizable tools for informal learning experiences.</p></li>
-          <li><p style={{fontWeight: "bold"}}>🤝 Use participatory design approaches.</p></li>
+          <li><p style={{fontWeight: "bold"}}>Explore how people engage with informal learning spaces like museums or libraries.</p></li>
+          <li><p style={{fontWeight: "bold"}}>Develop ways of making these experiences accessible to diverse learners. </p></li>
+          <li><p style={{fontWeight: "bold"}}>Use co-design and participatory design approaches.</p></li>
       </ul>
 
       <p style={descriptionStyle}>
