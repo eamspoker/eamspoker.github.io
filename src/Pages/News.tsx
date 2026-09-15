@@ -1,4 +1,3 @@
-import React from 'react';
 import Card from '../Components/Card';
 
 
@@ -12,10 +11,10 @@ function News() {
     marginBottom: 10,
   }
 
-  const paperStyle = {
-    borderRadius: "2%",
-    padding: "10px",
-  }
+  // const paperStyle = {
+  //   borderRadius: "2%",
+  //   padding: "10px",
+  // }
 
   const updatesStyle = {
     textAlign: "left" as const,

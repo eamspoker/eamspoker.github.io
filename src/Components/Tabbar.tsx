@@ -1,7 +1,5 @@
-import React from 'react';
 import { Grid } from '@mui/material';
-import { Outlet, Link } from "react-router-dom";
-import { BorderColor } from '@mui/icons-material';
+import {Link } from "react-router-dom";
 
 type Props = {
     page: number;
@@ -10,26 +8,41 @@ type Props = {
 function Tabbar(props: Props) {
 
    const {page} = props;
-   const pages: string[] = ["Home", "Research", "Games", "CV"];
+   const pages: string[] = ["home", "about me", "projects", "cv"];
    const selectedStyle = {
-    fontWeight: "bold",
-    color: "black",
+    fontWeight: "ExtraBold",
     textDecoration: "none"
 
    };
 
    const unSelectedStyle = {
     textDecoration: "none",
-
- 
-  
    };
 
-   const gridStyle = {
-    padding: "10px",
-    borderWidth: "2px",
-    borderStyle: "solid none solid none"
-   }
+   const tabItemsStyle = {
+    display: "flex",
+    justifyContent: "flex-end",
+   };
+
+   const tabItemStyle = {
+    paddingRight: "24px"
+   };
+
+   const nameStyle = {
+
+   };
+
+   const tabbarStyle = {
+    margin: "0px",
+    padding: "20px",
+    borderWidth: "0px 0px 2px 0px",
+    borderStyle: "none none solid none",
+
+    display: "flex",
+    justifyContent: "space-between",
+    alignItems: "center"
+    
+  }
 
  
    
@@ -52,30 +65,28 @@ function Tabbar(props: Props) {
 
   const itemSize = 12/(pages.length);
   return (
-    <Grid
-  container
-  direction={"row"}
+    <div className="tabbar" style={tabbarStyle}>
 
-  height= {"100%"}
-  className="centered"
-  spacing={2}
-  padding="30px"
+    <div style={nameStyle}>
+      <h3>EMILY AMSPOKER</h3>
+    </div>
 
-  
->
-
-{Array.from(Array(4)).map((_, index) => (
-  <Grid style={gridStyle} item xs={itemSize}>
-            {LinkItem(index)}
-          </Grid>
-
-    ))}
-
-
-   
-
-
-</Grid>
+    <div style={tabItemsStyle}>
+      <div style={tabItemStyle}>
+        {LinkItem(0)}
+    </div>
+    <div style={tabItemStyle}>
+        {LinkItem(1)}
+    </div>
+    <div style={tabItemStyle}>
+        {LinkItem(2)}
+    </div>
+    <div style={tabItemStyle}>
+        {LinkItem(3)}
+    </div>
+    </div>
+   </div>
+              
   );
 }
 

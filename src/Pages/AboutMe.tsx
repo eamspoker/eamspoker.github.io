@@ -1,4 +1,3 @@
-import React from 'react';
 import Card from '../Components/Card';
 
 
@@ -28,13 +27,7 @@ function AboutMe() {
     <Card top={<h2 style={descriptionStyle }>
       About Me
     </h2>}>
-    <div style={aboutMeStyle}>
-    <p style={descriptionStyle}>
-      I'm a current PhD Student at <a target="_blank" href="https://www.gatech.edu/">Georgia Tech</a> 
-       in the <a target="_blank" href="https://www.cc.gatech.edu/degree-programs/phd-human-centered-computing">Human-Centered Computing program</a>. 
-      Specifically, I am advised by Dr. Jessica Roberts in the <a target="_blank" href="https://tiles.cc.gatech.edu/">Tiles Lab</a>.
-    </p>
-  
+    <div className="grid" style={aboutMeStyle}>
     </div>
     </Card>
   );

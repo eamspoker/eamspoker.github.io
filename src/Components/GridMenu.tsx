@@ -26,18 +26,18 @@ function GridMenu(props: Props) {
     {titles.map((title, index) => {
     if (title == "DIVIDER")
     {
-      return (<Grid item xs={12}>
+      return (<Grid size={{xs:12}}>
         
          <h2>{subtitles[index]}</h2>
       </Grid>);
     } else if (title == "TITLE")
     {
-      return (<Grid item xs={12}>
+      return (<Grid size={{xs:12}}>
          <h1>{subtitles[index]}</h1>
       </Grid>);
     } else
     {
-      return (<Grid item xs={3}>
+      return (<Grid size={{xs:12}}>
         <Link to={components[index]}>
           <Paper style={paperStyle} elevation={2} >
            <h3>{title}</h3>

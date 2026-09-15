@@ -20,7 +20,7 @@ function ProjectContent(props: Props) {
 
 
 
-  const {name, skills, titles, sections, images} = props;
+  const {titles, sections, images} = props;
 
   let imageCounter = 0;
 
@@ -48,24 +48,24 @@ function ProjectContent(props: Props) {
         return index%2 == 0 ? (<Grid
           container
           spacing={2}
-          justifyContent="left"
+          // justifyContent="left"
           key={index}
           >
-            <Grid item xs={3}>
+            <Grid size={{xs:3}}>
             <h2 style={{textAlign: "left"}}>{title}</h2>
             </Grid>
-            <Grid item xs={9}>
+            <Grid size={{xs:9}}>
             </Grid>
           </Grid>) : 
           (<Grid
             container
             spacing={2}
-            justifyContent="left"
+            // justifyContent="left"
             key={index}
             >
-              <Grid item xs={9}>
+              <Grid size={{xs:9}}>
               </Grid>
-              <Grid item xs={3}>
+              <Grid size={{xs:3}}>
               <h2 style={{textAlign: "right"}}>{title}</h2>
               </Grid>
             </Grid>);
@@ -73,15 +73,15 @@ function ProjectContent(props: Props) {
       return index%2 == 0 ? (<Grid
         container
         spacing={2}
-        justifyContent="left"
+        // justifyContent="left"
         key={index}
         >
-          <Grid item xs={3}>
+          <Grid size={{xs:3}}>
           <h2 style={{textAlign: "left"}}>{title}</h2>
           </Grid>
-          <Grid item xs={9}>
+          <Grid size={{xs:9}}>
           </Grid>
-          <Grid item xs={12}>
+          <Grid size={{xs:12}}>
           <Paper style={paperStyle} elevation={2} >
           <p style={{textAlign: "left", fontSize:"1em",}}>{sections[index]}</p>
            </Paper>
@@ -90,15 +90,15 @@ function ProjectContent(props: Props) {
         (<Grid
           container
           spacing={2}
-          justifyContent="left"
+          // justifyContent="left"
           key={index}
           >
-            <Grid item xs={9}>
+            <Grid size={{xs:9}}>
             </Grid>
-            <Grid item xs={3}>
+            <Grid size={{xs:3}}>
             <h2 style={{textAlign: "right"}}>{title}</h2>
             </Grid>
-            <Grid item xs={12}>
+            <Grid size={{xs:12}}>
             <Paper style={paperStyle} elevation={2} >
               <p style={{textAlign: "left", fontSize:"1em",}}>{sections[index]}</p>
              </Paper>

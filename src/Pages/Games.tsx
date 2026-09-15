@@ -1,26 +1,24 @@
 import * as React from 'react';
-import Profile from './Profile';
-import AboutMe from './AboutMe';
-import { Grid, IconButton } from '@mui/material';
+import { Grid } from '@mui/material';
 import Right2Item from '../Components/Right2Item';
-import Footer from '../Components/Footer';
-import Title2Item from '../Components/Title2Item';
-import ResearchInterests from './ResearchInterests';
-import News from './News';
+// import Footer from '../Components/Footer';
+// import Title2Item from '../Components/Title2Item';
+// import ResearchInterests from './ResearchInterests';
+// import News from './News';
 import Stacked2Item from '../Components/Stacked2Item';
-import Publications from './Publications';
-import ArrowCircleLeftIcon from '@mui/icons-material/ArrowCircleLeft';
-import ArrowCircleRightIcon from '@mui/icons-material/ArrowCircleRight';
+// import Publications from './Publications';
+// import ArrowCircleLeftIcon from '@mui/icons-material/ArrowCircleLeft';
+// import ArrowCircleRightIcon from '@mui/icons-material/ArrowCircleRight';
 import { useState } from 'react';
 
 
-function Navigator(curr : number, max : number, increment : () => void, decrement : () => void){
+// function Navigator(curr : number, max : number, increment : () => void, decrement : () => void){
 
 
 
-  return (<Grid container spacing={2}>
+  // return (<Grid container spacing={2}>
 
-<Grid item xs={3}>
+{/* <Grid item xs={3}>
   </Grid>
 
     <Grid item xs={2}>
@@ -40,11 +38,11 @@ function Navigator(curr : number, max : number, increment : () => void, decremen
       </Grid>
 
       <Grid item xs={3}>
-      </Grid>
+      </Grid> */}
 
-      </Grid>
+      {/* </Grid>
       );
-}
+} */}
 function Games() {
 
 
@@ -78,12 +76,12 @@ function Games() {
   return (
     <div className="Homepage">
        <Grid container spacing={2}>
-        <Grid item xs={12}>
+        <Grid size={{xs:12}}>
 
             <Right2Item optionalTitle={
               <Stacked2Item
               item1={<div className="centered"><h1 style={{margin: "0px"}}>{names[index]}</h1></div>}
-              item2={Navigator(index+1, names.length, increment, decrement)}
+              item2={<div></div>}// item2={Navigator(index+1, names.length, increment, decrement)}
             />
             } 
             smallItem = {<div><h2 style={{margin: "0px"}}> <b>Class: </b>{subtitles[index]}</h2>

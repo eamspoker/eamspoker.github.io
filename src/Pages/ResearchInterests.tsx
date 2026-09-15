@@ -1,8 +1,3 @@
-import { BorderAll } from '@mui/icons-material';
-import { Paper } from '@mui/material';
-import { grey } from '@mui/material/colors';
-import React from 'react';
-import Card from '../Components/Card';
 import { Link } from "react-router-dom";
 
 function ResearchInterests() {

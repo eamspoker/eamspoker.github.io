@@ -28,23 +28,23 @@ function Right2ItemNoTabbar(props: Props) {
     <Grid container spacing={2}>
 
 
-        <Grid item xs={12}>
+        <Grid size={{xs:12}}>
         </Grid>
 
-        <Grid item xs={3} md={1}>
+        <Grid size={{xs:3, md:1}}>
         </Grid>
 
 
         
 
-        <Grid item xs={6} md={2}>
+        <Grid size={{xs:6, md:2}}>
         {smallItem}
 
         </Grid>
         
 
 
-        <Grid item xs={12} md={8}>
+        <Grid size={{xs:12, md:8}}>
         {bigItem}
         </Grid>       
         </Grid>

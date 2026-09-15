@@ -1,9 +1,5 @@
 import * as React from 'react';
-import Profile from './Profile';
-import AboutMe from './AboutMe';
-import { Grid } from '@mui/material';
 import Right2Item from '../Components/Right2Item';
-import Footer from '../Components/Footer';
 import ProjectDescription from '../Components/ProjectDescription';
 
 

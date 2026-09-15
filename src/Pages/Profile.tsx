@@ -1,10 +1,8 @@
 
 import SchoolIcon from '@mui/icons-material/School';
-import React from 'react';
 import Card from '../Components/Card';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
-import { Link } from 'react-router-dom';
 import { Grid } from '@mui/material';
 import { IconButton } from '@mui/material';
 
@@ -38,12 +36,12 @@ function Profile() {
 
 
   return (
-    <Card top={<img alt="Emily looking forward and smiling." src={require("./pfp.jpg")} style={pfpStyle}></img>
+    <Card top={<img alt="Emily looking forward and smiling." src={"./pfp.jpg"} style={pfpStyle}></img>
   } style={headerStyle}>
      <Grid container spacing={0}>
 
 
-      <Grid className='centered 'item xs={4}>
+      <Grid className='centered' size={{xs:4}}>
       <IconButton aria-label="Google Scholar" 
       style={{ backgroundColor: 'transparent' }} onClick={() => window.open("https://scholar.google.com/citations?user=T4sy0-4AAAAJ&hl=en")}>
       <SchoolIcon fontSize="large" style={iconStyle} />
@@ -51,7 +49,7 @@ function Profile() {
       </Grid>
 
 
-      <Grid className='centered ' item xs={4}>
+      <Grid className='centered ' size={{xs:4}}>
       <IconButton aria-label="Github.com" style={{ backgroundColor: 'transparent' }}
       onClick={() => window.open("https://github.com/eamspoker")}>
 
@@ -59,7 +57,7 @@ function Profile() {
       </IconButton>
       </Grid>
      
-      <Grid className='centered ' item xs={4}>
+      <Grid className='centered ' size={{xs:4}}>
       <IconButton aria-label="Linkedin.com" style={{ backgroundColor: 'transparent' }}
       onClick={() => window.open("https://www.linkedin.com/in/emily-amspoker-52944b18a/")}>
 

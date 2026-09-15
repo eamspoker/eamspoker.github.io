@@ -1,8 +1,6 @@
 import { Grid } from '@mui/material';
 import React from 'react';
-import { styled } from '@mui/material/styles';
 import Tabbar from './Tabbar';
-import Footer from './Footer';
 
 
 type Props = {
@@ -14,10 +12,10 @@ type Props = {
 function Right2Item(props: Props) {
   const {smallItem, bigItem, optionalTitle, page} = props;
 
-  const Item = styled("div")(({ theme }) => ({
-    padding: theme.spacing(1),
-    textAlign: 'center',
-  }));
+  // const Item = styled("div")(({ theme }) => ({
+  //   padding: theme.spacing(1),
+  //   textAlign: 'center',
+  // }));
 
   
 
@@ -28,11 +26,11 @@ function Right2Item(props: Props) {
     
     <Grid container spacing={2}>
 
-        <Grid item xs={12}>
+        <Grid size={{xs:12}}>
         <Tabbar page={page} horizontal={true}/>
         </Grid> 
 
-        <Grid item xs={12}>
+        <Grid size={{xs:12}}>
         {optionalTitle}
         </Grid> 
 
@@ -40,23 +38,23 @@ function Right2Item(props: Props) {
          
 
 
-        <Grid item xs={12}>
+        <Grid size={{xs:12}}>
         </Grid>
 
-        <Grid item xs={3} md={1}>
+        <Grid size={{xs:3, md:1}}>
         </Grid>
 
 
         
 
-        <Grid item xs={6} md={2}>
+        <Grid size={{xs:6, md:2}}>
         {smallItem}
 
         </Grid>
         
 
 
-        <Grid item xs={12} md={8}>
+        <Grid size={{xs:12, md:8}}>
         {bigItem}
         </Grid>       
         </Grid>

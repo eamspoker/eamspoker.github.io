@@ -1,5 +1,4 @@
 import { Paper } from '@mui/material';
-import React from 'react';
 
 type Props = 
 {
@@ -9,7 +8,7 @@ type Props =
   sections?: Array<string>,
 }
 function ProjectDescription(props: Props) {
-  const {name, skills, titles, sections} = props;
+  const {name, skills} = props;
   const descriptionStyle = {
     color: "grey",
   }

@@ -1,15 +1,9 @@
-import React, { ReactElement } from 'react';
 import { motion } from "framer-motion"
 
 
-type Props = {
-    element: ReactElement
-}
 
-
-function WrapperPage(props: Props)
+function WrapperPage()
 {
-    let elem = props.element;
 
     return (
         <motion.div 
@@ -17,7 +11,6 @@ function WrapperPage(props: Props)
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
         >
-            {elem}
         </motion.div>
     )
 

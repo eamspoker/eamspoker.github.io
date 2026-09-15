@@ -1,8 +1,6 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client';
 import Homepage from './Pages/Homepage';
-import reportWebVitals from './reportWebVitals';
-import { useLocation, useRoutes, Route, HashRouter } from "react-router-dom";
+import { useLocation, useRoutes } from "react-router-dom";
 import Resume from './Pages/Resume';
 import WrapperPage from './Pages/WrapperPage';
 import { AnimatePresence } from "framer-motion";
@@ -17,24 +15,24 @@ const location = useLocation();
     const element = useRoutes([
         {
           path: "/",
-          element: <WrapperPage element={<Homepage />}/>
+          element: <Homepage />
         },
         {
           path: "/research",
           element: (
-            <WrapperPage element={<Research/>}/>
+            <Research/>
           )
         }, 
         {
           path: "/games",
           element: (
-            <WrapperPage element={<Games/>}/>
+            <Games/>
           )
         },
         {
           path: "/cv",
           element: (
-            <WrapperPage element={<Resume/>}/>
+            <Resume/>
           )
         },
       ]);
