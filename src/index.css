@@ -10,13 +10,16 @@
   font-weight: 100 900;
 }
 
+
 :root {
-  --bg-color: #F9F2E1;
+  --bg-color: #fcf8ef;
   --accent-color: #A85410;
   --text-color: #445822;
   --header-font: 'SFC-Slemans', Courier, monospace;
   --body-font: 'Figtree', Helvetica, sans-serif;
 }
+
+
 body {
   background-color: var(--bg-color);
   
@@ -28,6 +31,7 @@ body {
   font-size: 1.25rem;
   line-height: 2rem;
   padding: 0px;
+
 
 }
 
@@ -59,11 +63,11 @@ h4 {
   color: var(--accent-color);
   font-weight: 500;
   font-size: 1.25rem;
-  line-height: 1.25rem;
+  line-height: 1.5rem;
 }
 
 a {
-  color: var(--text-color);
+  color: inherit;
 }
 
 p {
@@ -72,6 +76,7 @@ p {
   font-weight: 400;
   padding: 8px;
 }
+
 
 .graph_paper {
     background-image: url("background.png");
@@ -120,6 +125,11 @@ p {
     .heroImage {
       display: block;
     }
+}
+
+.horizontal {
+      display: flex;
+    justify-content: flex-start;
 }
 
 .sr-only {

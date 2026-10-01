@@ -7,10 +7,10 @@ type Props = {
   smallItem: React.ReactNode,
   bigItem: React.ReactNode,
   optionalTitle?: React.ReactNode,
-  page: number,
+  page?: number,
 }
 function Right2Item(props: Props) {
-  const {smallItem, bigItem, optionalTitle, page} = props;
+  const {smallItem, bigItem} = props;
 
   // const Item = styled("div")(({ theme }) => ({
   //   padding: theme.spacing(1),
@@ -24,39 +24,20 @@ function Right2Item(props: Props) {
                 
 
     
-    <Grid container spacing={2}>
+    <Grid container spacing={0}>
 
-        <Grid size={{xs:12}}>
-        <Tabbar page={page} horizontal={true}/>
-        </Grid> 
-
-        <Grid size={{xs:12}}>
-        {optionalTitle}
-        </Grid> 
-
-
-         
-
-
-        <Grid size={{xs:12}}>
+       <Grid size={{xs:12, md:8}}>
+        {bigItem}
         </Grid>
 
-        <Grid size={{xs:3, md:1}}>
-        </Grid>
-
-
-        
-
-        <Grid size={{xs:6, md:2}}>
+        <Grid size={{xs:12, md:4}}>
         {smallItem}
 
         </Grid>
         
 
 
-        <Grid size={{xs:12, md:8}}>
-        {bigItem}
-        </Grid>       
+              
         </Grid>
         </div>
     

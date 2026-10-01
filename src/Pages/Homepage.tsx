@@ -5,6 +5,9 @@ import { useState } from 'react';
 import StickyNote from '../Components/StickyNote';
 import Board from '../Components/Board';
 import Grid from '@mui/material/Grid';
+import Stacked2Item from '../Components/Stacked2Item';
+import Right2Item from '../Components/Right2Item';
+import News from './News';
 
 
 function Homepage() {
@@ -17,7 +20,7 @@ function Homepage() {
   const header_style = {
     padding: "48px",
     borderWidth: "0px 0px 2px 0px",
-    borderStyle: "none none solid none"
+    borderStyle: "none none solid none",
    };
 
   const sticky_container_style = {
@@ -36,13 +39,6 @@ function Homepage() {
 
    };
 
-   const title_style = {
-    padding: "8px", 
-    margin:"0px",
-    display: "flex",
-    justifyContent: "flex-end"
-
-   };
 
   const [project, setProject] = useState("");
   const [problem, setProblem] = useState("");
@@ -108,21 +104,19 @@ function Homepage() {
                         setProblem("");
                       }
     }
-  return (
-    <div className="Homepage">
-        <Tabbar page={0} horizontal={true}/>
-        
-        <div style={header_style} className='graph_paper'>
+
+  const heroImage = <div style={header_style} className={'light'}>
           <div className="heroImage">
             <img alt="Emily in her graduation robes looking forward and smiling." style={{width:"50%", maxWidth: "256px", minWidth: "150px", objectFit: "contain"}} src="emily.png"/>
           <div style={{alignContent: "center"}}>
-            <h1 style={{paddingBottom: "8px", margin:"0px"}}>HELLO! I'M EMILY :D</h1>
-            <h4  style={{padding: "0px", margin:"0px"}} className="subtitle">I'm a designer, researcher, and developer.</h4>
+            <h1 style={{paddingBottom: "8px", margin:"0px"}}>HELLO! I'M EMILY!</h1>
+            {/* <h4  style={{padding: "0px", margin:"0px"}} className="subtitle">I'm a designer, researcher, and developer.</h4> */}
+            <h4> I'm currently working on my <b><a href="https://www.cc.gatech.edu/degree-programs/master-science-computer-science" target='_'>Master's Degree in Computer Science</a></b> with a specialization in <b><a href="https://omscs.gatech.edu/specialization-human-computer-interaction" target="_">Human-Computer Interaction</a></b> at <b>Georgia Tech.</b></h4>
           </div>
           </div>
-        </div>
+        </div>;
 
-         <div style={sticky_container_style} className='graph_paper'>
+  const stickies = <div style={sticky_container_style} className='graph_paper'>
           <div style={hero_image_style}>
           <div style={{alignContent: "center"}}>
 
@@ -130,30 +124,34 @@ function Homepage() {
                   onDragEnd={onDropStickyNote}
                 >
                   <Grid container spacing={2}>
-                  <Grid size={{xs: 12, md: 4}}>
+                  <Grid size={{xs: 12, md: 6}}>
                   <h3 style={{padding: "0px", margin:"0px"}} >I've investigated how</h3>                 
                     
 
                     <Board id="problems">
                      {problem && <StickyNote color="green" id={problem} text={problem_texts[parseInt(problem.split("_")[1])]}/>}
                     </Board>
+                    </Grid>
 
-                      <h3 style={{padding: "0px", margin:"0px"}} >In order to create</h3>                 
+                    <Grid size={{xs: 12, md: 6}}>
+
+                      <h3 style={{padding: "0px", margin:"0px", color:"#A85410"}} >In order to create</h3>                 
 
 
                     <Board id="projects">
                      {project && <StickyNote color="red" id={project} text={project_texts[parseInt(project.split("_")[1])]}/>}
                     </Board>
+
                     </Grid>
 
-                    <Grid size={{xs: 12, md: 8}}>
+                    <Grid size={{xs: 12, md: 12}}>
 
                     <Grid container spacing={2}>
                     {stickyIds.map((id) => {
                     let color = id.split("_")[0];
                     let index = parseInt(id.split("_")[1]);
                     let text = color === "green" ? problem_texts[index] : project_texts[index]; 
-                    return (id != project) && (id != problem) && <Grid size={{xs: 12, md: 4}}><StickyNote id={id} key={id} color={color} text={text}/></Grid>
+                    return (id != project) && (id != problem) && <Grid size={{xs: 12, md: 6, lg:4, xl: 3}}><StickyNote id={id} key={id} color={color} text={text}/></Grid>
                   })} 
                   </Grid>  
 
@@ -163,7 +161,14 @@ function Homepage() {
                 </DragDropProvider>
           </div>
           </div>
-        </div>
+        </div>;
+
+  return (
+    <div className="Homepage">
+        <Tabbar page={0} horizontal={true}/>
+        <Right2Item smallItem={<News/>}
+          bigItem={<div> {heroImage} {stickies} </div>} />
+         
 
     </div>
   );

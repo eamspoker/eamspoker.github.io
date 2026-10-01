@@ -19,7 +19,7 @@ function Stacked2Item(props: Props) {
                 
 
     
-    <Grid container spacing={2}>
+    <Grid container spacing={0}>
 
 
         <Grid size={{xs:12}}>

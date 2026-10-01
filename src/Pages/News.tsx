@@ -1,52 +1,67 @@
 import Card from '../Components/Card';
+import Stacked2Item from '../Components/Stacked2Item';
 
 
 function News() {
 
   const descriptionStyle = {
-    textAlign: "left" as const,
-    marginLeft: 30,
-    marginRight: 30,
-    marginTop: 10,
-    marginBottom: 10,
+    padding: "16px",
+    borderWidth: "2px",
+    borderStyle: "solid solid solid solid",
+    marginTop: "0px"
+  }
+  const descriptionStyle2 = {
+    padding: "16px",
+    borderWidth: "2px",
+    borderStyle: "none none solid none",
+    marginTop: "0px",
+    textAlign: "center" as any
   }
 
-  // const paperStyle = {
-  //   borderRadius: "2%",
-  //   padding: "10px",
-  // }
+  const paperStyle = {
+    borderWidth: "2px",
+    borderStyle: "none solid solid solid",
+    marginTop: "0px",
+    paddingTop: "0px",
+    height: "100%"
+  }
 
   const updatesStyle = {
     textAlign: "left" as const,
-    marginLeft: 30,
-    marginRight: 30,
-    marginTop: 10,
-    marginBottom: 10,
+    marginLeft: 32,
+    marginRight: 32,
+
     
   }
 
   return (
-    <Card top={<h2 style={descriptionStyle }>
+    <div style={paperStyle}>
+      <h2 className="graph_paper" style={descriptionStyle2} >
       News & Updates
-    </h2>}>
+    </h2>
     <div style={updatesStyle}>
 
-      <p style={{fontSize: "1em", fontWeight:"bold"}}>August 2025</p>
+      <h4 style={descriptionStyle} className='graph_paper'>June 2026</h4>
     <ul style={{fontSize: "1em"}}>
-      <li>Very excited to announce that I am starting my PhD at Georgia Tech, where I'll be working with Dr. Jessica Roberts in <a target="_blank" href="https://tiles.cc.gatech.edu/">the Tiles Lab</a> :D</li>
+      <li>I'm very excited to start my internship at Pixar Animation Studios, where I will be working as a <b>Product Design Intern</b>.</li>
     </ul>
 
-      <p style={{fontSize: "1em", fontWeight:"bold"}}>June 2025</p>
+      <h4 style={descriptionStyle} className='graph_paper'>August 2025</h4>
     <ul style={{fontSize: "1em"}}>
-      <li>Super grateful to announce that I received the NSF's <a target="_" href="https://www.nsfgrfp.org/">Graduate Research Fellowship</a></li>
+      <li>I started graduate school at <b>Georgia Tech</b>!</li>
     </ul>
 
-      <p style={{fontSize: "1em", fontWeight:"bold"}}>January 2025</p>
+      <h4 style={descriptionStyle} className='graph_paper'>June 2025</h4>
     <ul style={{fontSize: "1em"}}>
-      <li>I received an honorable mention for the <a target="_" href="https://verified.sertifier.com/en/verify/29037133114610">2025 CRA Outstanding Undergraduate Research Award.</a></li>
+      <li>I'm super grateful to announce that I received the NSF's <b><a target="_" href="https://www.nsfgrfp.org/">Graduate Research Fellowship</a></b> to support my graduate research in Human-Computer Interaction.</li>
+    </ul>
+
+      <h4 style={descriptionStyle}  className='graph_paper'>January 2025</h4>
+    <ul style={{fontSize: "1em"}}>
+      <li>I received an honorable mention for the <b><a target="_" href="https://verified.sertifier.com/en/verify/29037133114610">2025 CRA Outstanding Undergraduate Research Award.</a></b></li>
     </ul>
     </div>
-    </Card>
+    </div>
   );
 }
 
