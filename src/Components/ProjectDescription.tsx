@@ -10,11 +10,9 @@ type Props =
 function ProjectDescription(props: Props) {
   const {name, skills} = props;
   const descriptionStyle = {
-    color: "grey",
   }
 
   const headerStyle = {
-    backgroundColor: "white",
     display: "block",
     alignItems: "center",
     justifyContent: "center",
@@ -23,18 +21,18 @@ function ProjectDescription(props: Props) {
 
   const paperStyle = {
     borderRadius: "2%",
-    padding: "10px",
+    padding: "8px",
   }
 
   return (
-    <Paper style={paperStyle} elevation={0} >
+    <div style={paperStyle} >
     <header style={headerStyle}>
         <h1>
           {name}
         </h1>
-        <h5 style={descriptionStyle}>{skills}</h5>
+        <h4 style={descriptionStyle}>{skills}</h4>
       </header>
-      </Paper>
+      </div>
   );
 }
 

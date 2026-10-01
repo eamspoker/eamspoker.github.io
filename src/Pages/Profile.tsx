@@ -18,7 +18,6 @@ function Profile() {
   }
 
   const headerStyle = {
-    backgroundColor: "white",
     display: "block",
     alignItems: "center",
     justifyContent: "center",

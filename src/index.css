@@ -5,17 +5,25 @@
 
 @font-face {
   font-family: 'Figtree';
-  src: local('Figtree-VariableFont_wght'), url(fonts/Figtree-VariableFont_wght.woff) format('woff');
+  /* src: local('Figtree-VariableFont_wght'), url(fonts/Figtree-VariableFont_wght.woff) format('woff'); */
+  src: local('Figtree-VariableFont_wght'), url(fonts/Figtree-VariableFont_wght.ttf) format('truetype');
+  font-weight: 100 900;
 }
+
 :root {
   --bg-color: #F9F2E1;
   --accent-color: #A85410;
   --text-color: #445822;
+  --header-font: 'SFC-Slemans', Courier, monospace;
+  --body-font: 'Figtree', Helvetica, sans-serif;
 }
 body {
   background-color: var(--bg-color);
-  font-family: "Figtree";
+  
+  font-family: var(--body-font);
+  font-weight: 500;
   color: var(--text-color);
+
   margin: 0px;
   font-size: 1.25rem;
   line-height: 2rem;
@@ -26,40 +34,102 @@ body {
 
 
 h1 {
-  font-family: "SFC-Slemans";
+  font-family: var(--header-font);
   font-size: 3rem;
   line-height: 4rem;
+  text-transform: uppercase;
 
 }
 
 h2 {
-  font-family: "SFC-Slemans"
+  font-family: var(--header-font);
+  text-transform: uppercase;
 }
 
 h3 {
-  font-family: "SFC-Slemans";
+  font-family: var(--header-font);
   font-size: 1.75rem;
   line-height: 2rem;
+  text-transform: uppercase;
   
 }
 
-.subtitle {
-  font-family: 'Figtree';
+h4 {
+  font-family: var(--body-font);
   color: var(--accent-color);
+  font-weight: 500;
+  font-size: 1.25rem;
+  line-height: 1.25rem;
 }
 
 a {
   color: var(--text-color);
 }
 
-.graph_paper {
-    background-image: url("background.png");
+p {
+  background-color: #fcf9f0;
+  /* color: black; */
+  font-weight: 400;
+  padding: 8px;
 }
 
-.green_sticky {
+.graph_paper {
     background-image: url("background.png");
+    background-color: var(--bg-color); 
+    background-blend-mode: lighten; }
+
+.green_sticky {
+    width: 360px;
+    background-image: url("green_sticky.png");
+    background-size: contain;
+    color: var(--text-color);
+
 }
 
 .red_sticky {
-    background-image: url("background.png");
+   
+    background-image: url("red_sticky.png");
+    color: var(--accent-color);
 }
+
+
+.hamburger {
+    display: none;
+}
+
+.tabItems {
+      display: flex;
+}
+.heroImage {
+  padding: 8px; 
+    margin: 0px;
+    display: flex;
+    justify-content: flex-start;
+    gap: 56px
+
+}
+@media only screen and (max-width: 600px) {
+    .hamburger {
+        display: block;
+    }
+
+    .tabItems {
+      display: none;
+    }
+
+    .heroImage {
+      display: block;
+    }
+}
+
+.sr-only {
+    clip: rect(1px, 1px, 1px, 1px);
+    clip-path: inset(50%);
+    height: 1px;
+    width: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+  } 
+

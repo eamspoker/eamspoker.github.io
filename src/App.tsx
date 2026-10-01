@@ -6,6 +6,9 @@ import WrapperPage from './Pages/WrapperPage';
 import { AnimatePresence } from "framer-motion";
 import Research from './Pages/Research';
 import Games from './Pages/Games';
+import ProjectPage from './Pages/ProjectPage';
+import AboutMe from './Pages/AboutMe';
+import Projects from './Pages/Projects';
 
 function App() {
 
@@ -18,19 +21,22 @@ const location = useLocation();
           element: <Homepage />
         },
         {
-          path: "/research",
-          element: (
-            <Research/>
-          )
+          path: "/projects",
+          children: [
+            { index: true,
+              element: <Projects/>},
+             { path: 'Accessible_Oceans',
+              element: <ProjectPage project="Accessible_Oceans"/>},
+          ]
         }, 
         {
-          path: "/games",
+          path: "/about_me",
           element: (
-            <Games/>
+            <AboutMe/>
           )
         },
         {
-          path: "/cv",
+          path: "/resume",
           element: (
             <Resume/>
           )
