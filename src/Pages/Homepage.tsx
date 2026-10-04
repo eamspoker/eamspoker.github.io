@@ -8,6 +8,7 @@ import Grid from '@mui/material/Grid';
 import Stacked2Item from '../Components/Stacked2Item';
 import Right2Item from '../Components/Right2Item';
 import News from './News';
+import WrapperPage from './WrapperPage';
 
 
 function Homepage() {
@@ -166,9 +167,10 @@ function Homepage() {
   return (
     <div className="Homepage">
         <Tabbar page={0} horizontal={true}/>
+        <WrapperPage>
         <Right2Item smallItem={<News/>}
           bigItem={<div> {heroImage} {stickies} </div>} />
-         
+         </WrapperPage>
 
     </div>
   );

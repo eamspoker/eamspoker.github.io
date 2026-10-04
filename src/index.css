@@ -20,6 +20,7 @@
 }
 
 
+
 body {
   background-color: var(--bg-color);
   
@@ -75,6 +76,14 @@ p {
   /* color: black; */
   font-weight: 400;
   padding: 8px;
+}
+
+td {
+  background-color: #fcf9f0;
+  /* color: black; */
+  padding: 16px;
+  border-width: 2px;
+  border-style: solid;
 }
 
 

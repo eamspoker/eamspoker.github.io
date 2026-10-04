@@ -2,15 +2,14 @@ import React from 'react';
 import Homepage from './Pages/Homepage';
 import { useLocation, useRoutes } from "react-router-dom";
 import Resume from './Pages/Resume';
-import WrapperPage from './Pages/WrapperPage';
-import { AnimatePresence } from "framer-motion";
-import Research from './Pages/Research';
-import Games from './Pages/Games';
+import { AnimatePresence, motion, type Variant } from "framer-motion";
 import ProjectPage from './Pages/ProjectPage';
 import AboutMe from './Pages/AboutMe';
 import Projects from './Pages/Projects';
 
 function App() {
+
+
 
 
 const location = useLocation();
@@ -47,6 +46,7 @@ const location = useLocation();
 
 
       return ( <AnimatePresence mode="wait" initial={false}>
+          
         {React.cloneElement(element, { key: location.pathname })}
       </AnimatePresence>);
       

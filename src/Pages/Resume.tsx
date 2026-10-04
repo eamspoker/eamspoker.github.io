@@ -1,5 +1,6 @@
 import * as React from 'react';
 import Tabbar from '../Components/Tabbar';
+import WrapperPage from './WrapperPage';
 
 
 function Resume() {
@@ -19,6 +20,7 @@ function Resume() {
   return (
     <div>
       <Tabbar page={3}/>
+      <WrapperPage>
       <div style={resumePageStyle}>
         <div style={{width: "fit-content", height: "fit-content",
     padding:"16px", borderStyle: "solid", borderWidth: "2px", borderColor: "#445822"}} className='graph_paper'>
@@ -28,6 +30,7 @@ function Resume() {
       <iframe src="https://drive.google.com/file/d/1-51K77RGPFXJFReirkw-aYuY12bJXxdW/preview" 
        width="800em" max-width="100%" height="750em" allow="autoplay"></iframe>
       </div>
+      </WrapperPage>
 
     </div>
   );

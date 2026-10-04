@@ -5,6 +5,7 @@ import GitHubIcon from '@mui/icons-material/GitHub';
 import { Grid } from '@mui/material';
 import { IconButton } from '@mui/material';
 import Tabbar from '../Components/Tabbar';
+import WrapperPage from './WrapperPage';
 
 function AboutMe() {
 
@@ -31,6 +32,8 @@ function AboutMe() {
   return (
 <div>
   <Tabbar page={1}/>
+  <WrapperPage>
+
    <div className="graph_paper" style={{alignContent: "center", margin: "8px", height: "100%"}}>
             <h1 style={{paddingBottom: "8px", margin:"0px"}}>This page is under construction...</h1>
             <h4  style={{padding: "0px", margin:"0px"}} className="subtitle">Check back later for more updates!</h4>
@@ -54,7 +57,8 @@ function AboutMe() {
 
       <LinkedInIcon fontSize="large" />
       </IconButton> */}
- 
+
+      </WrapperPage>
       </div> 
   );
 }

@@ -1,6 +1,8 @@
 import Markdown from 'react-markdown'
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import Tabbar from '../Components/Tabbar';
+import WrapperPage from './WrapperPage';
+import remarkGfm from 'remark-gfm';
 
 type Props = {
     project: string
@@ -31,9 +33,11 @@ function ProjectPage(props: Props) {
 
    return <div>
             <Tabbar page={2}/>
+            <WrapperPage>
             <div className="graph_paper" style={projectPageStyle}>
-                <Markdown>{description}</Markdown>
+                <Markdown remarkPlugins={[remarkGfm]}>{description}</Markdown>
             </div>
+            </WrapperPage>
             </div>;
 
 }
