@@ -70,7 +70,6 @@ function ProjectButton(props : Props)
         </div>
          <div style={pillStyle}>
             <p style={pillColor}>{props.dates}</p>
-            
         </div>
         </div>
         </div>
