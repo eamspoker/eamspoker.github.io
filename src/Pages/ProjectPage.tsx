@@ -29,52 +29,28 @@ function ProjectPage(props: Props) {
     borderTop: "0px",
    }
 
-   useEffect(() => {
-    fetch("/project_descriptions/" + project + ".md")
-        .then((res) => {
-            if (!res.ok) {
-                throw new Error('Network response was not ok');
-            }
-            return res.text()
-        })
-        .then((project_text) => {
-            console.log(project_text)
-            setDescription(project_text);
-        })
-        .catch((e) => console.error(e));
-   }, []);
-
 
 
    return <div style={{height: "100vh"}}>
             <Tabbar page={2}/>
-            <WrapperPage>
 
-
-    <Grid container spacing={0} sx={{height: "100vh"}}>
-   <Grid size={{xs: 12}}  sx={headerStyle}>
+<Grid container spacing={0}>
+   <Grid size={{xs: 12, md:12}} sx={headerStyle}>
     <h1 data-heading="A Sanctuary in Sound" dir="auto">A Sanctuary in Sound</h1>
    </Grid>
-    <Grid size={{xs:12, md:6}} sx={{height: "100vh"}}>
+
+   <Grid size={{xs: 12, md:4}} sx={{  border: "2px solid", borderTop: "0px", height: "800px",  overflowY: "auto"}}>
             <AccessibleOceans/>
         </Grid>
-       <Grid size={{xs:12, md:6}}  >
+       <Grid size={{xs: 12, md:8}} sx={{height: "min-content"}}>
 
             
-       <iframe style={{border: "0px", overflow: "hidden"}} width="100%" height="600px" src="https://embed.figma.com/deck/dDEWF2J1ODCV1LgxMPm0IS/A-Sanctuary-in-Sound-Overview?node-id=1-140&viewport=-98%2C-70%2C0.48&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1&embed-host=share" allowFullScreen></iframe>
+       <iframe style={{border: "0px", overflowY: "hidden"}} width="100%" height="800px" src="https://embed.figma.com/deck/dDEWF2J1ODCV1LgxMPm0IS/A-Sanctuary-in-Sound-Overview?node-id=1-140&viewport=-98%2C-70%2C0.48&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1&embed-host=share" allowFullScreen></iframe>
         </Grid>
 
-        
-        
   
         </Grid>
-        
-        
 
-
-
-
-            </WrapperPage>
             </div>;
 
 }

@@ -9,10 +9,9 @@ function AccessibleOceans () {
    const projectPageStyle = {
     padding: "48px",
     paddingTop: "16px",
-    border: "2px solid",
     borderTop: "0px",
-    overflow: "scroll",
-    height: "100%"
+    overflow: "scroll"
+
 
 
    }
@@ -79,6 +78,7 @@ function AccessibleOceans () {
 
 
 export default AccessibleOceans;
+
 
 
 
