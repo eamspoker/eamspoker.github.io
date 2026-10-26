@@ -24,7 +24,10 @@ function Tabbar(props: Props) {
 
    const tabItemsStyle = {
     justifyContent: "flex-end",
-   };
+    // Added properties to prevent layout shifting due to scrollbar appearance/disappearance
+    width: '100%', 
+    boxSizing: 'border-box' as any, // Ensures padding and border are included in the total width calculation
+};
 
    const dropdownItemStyle = {
     justifyContent: "flex-end",

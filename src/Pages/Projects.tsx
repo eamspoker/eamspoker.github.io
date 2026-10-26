@@ -1,5 +1,6 @@
 import ProjectButton from "../Components/ProjectButton";
 import Tabbar from "../Components/Tabbar";
+import WrapperPage from "./WrapperPage";
 
 function Projects()
 {
@@ -13,13 +14,13 @@ function Projects()
             type: "Academic Research"
         },
 
-        // {   
-        //     link: "ScottyU",
-        //     name: "ScottyU",
-        //     subtitle: "Designing a game for the first-year experience @ CMU",
-        //     dates: "Spring 2025",
-        //     type: "Design Capstone"
-        // },
+        {   
+            link: "ScottyU",
+            name: "ScottyU",
+            subtitle: "Designing a game for the first-year experience @ CMU",
+            dates: "Spring 2025",
+            type: "Design Capstone"
+        },
 
         // {   
         //     link: "Cosmend",
@@ -29,13 +30,14 @@ function Projects()
         //     type: "Academic Research"
         // },
 
-        //  {   
-        //     link: "Accessible_Pittsburgh",
-        //     name: "Accessible Pittsburgh",
-        //     subtitle: "Designing a smart parking system for the city of Pittsburgh @ CMU",
-        //     dates: "Fall 2023",
-        //     type: "Coursework"
-        // },
+         {   
+            link: "AccessiblePGH",
+            name: "Accessible Pittsburgh",
+            subtitle: "Designing a smart parking system for the city of Pittsburgh @ CMU",
+            dates: "Fall 2023",
+            type: "Coursework"
+        },
+
 
 
         // {   
@@ -63,6 +65,7 @@ function Projects()
             });
    return(<div>
     <Tabbar page={2}/>
+    <WrapperPage>
     <div style={{padding:" 32px"}}>
     <h1 style={{paddingBottom: "px", margin:"0px"}}>Projects</h1>
 
@@ -73,6 +76,7 @@ function Projects()
             }
         </ul>
     </div>
+    </WrapperPage>
 </div>);
 }
 export default Projects;

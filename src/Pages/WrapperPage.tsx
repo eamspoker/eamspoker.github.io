@@ -6,43 +6,39 @@ type Props = {
 
 function WrapperPage(props : Props)
 {
-      // 1. Define the swipe variants
-const pageVariants = {
-  initial: {
-    opacity: 0,
-  } as Variant,
-  animate: {
-    opacity: 1,
-    transition: {
-      duration: 0.5,
-      ease: [0.22, 1, 0.36, 1], // Smooth custom cubic-bezier ease
-    },
-  } as Variant,
-  exit: {
-    opacity: 0,
-    transition: {
-      duration: 0.4,
-      ease: [0.22, 1, 0.36, 1],
-    },
-  } as Variant,
-};
+      // 1. Define the swipe variants with gentle fade settings
+      const pageVariants = {
+        initial: {
+          opacity: 0,
+        } as Variant,
+        animate: {
+          opacity: 1,
+          transition: {
+            duration: 0.4, // Slightly faster than before for responsiveness but smooth
+            ease: "easeInOut", // Standard gentle easing curve (alternative to custom bezier)
+          },
+        } as Variant,
+        exit: {
+          opacity: 0,
+          transition: {
+            duration: 0.4, 
+            ease: "easeInOut", // Consistent smoothness on exit
+          },
+        } as Variant,
+      };
 
     return (
-        // <motion.div 
-        //     initial="inital"
-        //     animate="animate"
-        //     exit="exit"
-        //     key={location.pathname}
-        //     variants={pageVariants}
-
-        // >
-        //     {props.children}
-            
-        // </motion.div>
-
-        <div>
+        <motion.div 
+            // Using key={location.pathname} triggers re-animation when routes change.
+            // Ensure 'location' is available from your routing context (e.g., react-router-dom).
+            initial="initial"
+            animate="animate"
+            exit="exit"
+            variants={pageVariants}
+            key={location.pathname} 
+        >
             {props.children}
-        </div>
+        </motion.div>
     )
 
 }

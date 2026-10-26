@@ -1,6 +1,7 @@
 import * as React from 'react';
 import Tabbar from '../Components/Tabbar';
 import WrapperPage from './WrapperPage';
+import { Grid } from '@mui/material';
 
 
 function Resume() {
@@ -10,26 +11,24 @@ function Resume() {
     window.scrollTo(0, 0)
   }, [])
 
-  const resumePageStyle = {
-    display: "flex",
-    justifyContent: "flex-start",
-    padding: "32px", 
-    gap: "8px"
-  };
+
 
   return (
     <div>
       <Tabbar page={3}/>
       <WrapperPage>
-      <div style={resumePageStyle}>
-        <div style={{width: "fit-content", height: "fit-content",
-    padding:"16px", borderStyle: "solid", borderWidth: "2px", borderColor: "#445822"}} className='graph_paper'>
+      <Grid sx={{margin: "16px"}} container spacing={2}>
+        <Grid className="graph_paper callOutStyle" size={{xs: 12, md: 4}}>          
           <h1>Resume</h1>
           <h4>Last updated: 09/15/2026</h4>
-        </div>
-      <iframe src="https://drive.google.com/file/d/1-51K77RGPFXJFReirkw-aYuY12bJXxdW/preview" 
-       width="800em" max-width="100%" height="750em" allow="autoplay"></iframe>
-      </div>
+        </Grid>
+
+        <Grid size={{xs: 12, md: 8}}>          
+        <iframe src="https://drive.google.com/file/d/1-51K77RGPFXJFReirkw-aYuY12bJXxdW/preview" 
+        width="100%" max-width="100%" height="800px" allow="autoplay"></iframe>
+        </Grid>
+
+     </Grid>
       </WrapperPage>
 
     </div>

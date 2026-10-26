@@ -26,6 +26,8 @@ function AboutMe() {
 
 
   const aboutMeStyle = {
+    backgroundColor: "transparent !important",
+
 
   }
 
@@ -34,29 +36,48 @@ function AboutMe() {
   <Tabbar page={1}/>
   <WrapperPage>
 
-   <div className="graph_paper" style={{alignContent: "center", margin: "8px", height: "100%"}}>
-            <h1 style={{paddingBottom: "8px", margin:"0px"}}>This page is under construction...</h1>
-            <h4  style={{padding: "0px", margin:"0px"}} className="subtitle">Check back later for more updates!</h4>
-     </div>
-    {/* <img alt="Emily in her graduation robes looking forward and smiling." src={"/emily.png"}></img>
+   <Grid container spacing={2} sx={{margin: "16px"}} >
+    <Grid size={{xs: 12, lg:4}}>
+      <img alt="Emily in her graduation robes looking forward and smiling." src={"/emily.jpg"}></img>
+      </Grid>
+      <Grid size={{xs: 12, lg:8}}>
+      <div className='callOutStyle graph_paper'>
+        <p className="no_bg" >
+          Hi! My name is Emily and I'm originally from Denver, Colorado.
+        </p>
+<p className="no_bg" >I'm currently a Master's of Computer Science student at Georgia Tech. I'm specializing in Human-Computer Interaction and am grateful to be supported by the National Science Foundation's Graduate Research Fellowship.
+</p>
+ 
+<p className="no_bg"  >
+In my practice, I draw on <b>user-centered research and design methods</b> to create technology that is <b>accessible, effective, and equitable</b>.
+        </p>
+        <Grid container spacing={1}>
+        <Grid size={{md: 1}}>
+          <IconButton aria-label="Linkedin.com" style={{ color: 'black', backgroundColor: 'transparent' }}
+      onClick={() => window.open("https://www.linkedin.com/in/emily-amspoker-52944b18a/")}>
 
-      <IconButton aria-label="Google Scholar" 
-      style={{ backgroundColor: 'transparent' }} onClick={() => window.open("https://scholar.google.com/citations?user=1ZFxIeoAAAAJ&hl=en&oi=ao")}>
-      <SchoolIcon fontSize="large" />
+      <LinkedInIcon fontSize="large" />
       </IconButton>
-
-
-      <IconButton aria-label="Github.com" style={{ backgroundColor: 'transparent' }}
+        </Grid>
+        <Grid size={{md: 1}}>
+           <IconButton aria-label="Github.com" style={{ color: 'black', backgroundColor: 'transparent' }}
       onClick={() => window.open("https://github.com/eamspoker")}>
 
       <GitHubIcon fontSize="large"/>
       </IconButton>
-     
-      <IconButton aria-label="Linkedin.com" style={{ backgroundColor: 'transparent' }}
-      onClick={() => window.open("https://www.linkedin.com/in/emily-amspoker-52944b18a/")}>
-
-      <LinkedInIcon fontSize="large" />
-      </IconButton> */}
+        </Grid>
+        <Grid size={{md: 1}}>
+           <IconButton aria-label="Google Scholar" 
+      style={{ color: 'black', backgroundColor: 'transparent' }} onClick={() => window.open("https://scholar.google.com/citations?user=1ZFxIeoAAAAJ&hl=en&oi=ao")}>
+      <SchoolIcon fontSize="large" />
+      </IconButton>
+        </Grid>
+        </Grid>
+      </div>
+      </Grid>
+      
+   </Grid>
+    
 
       </WrapperPage>
       </div> 

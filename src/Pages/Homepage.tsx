@@ -47,13 +47,14 @@ function Homepage() {
   const problem_texts = ["people can play with data through sounds", "freshmen navigate their first year", "artists engineer their own tools"];
   const stickyIds : Array<string> = [];
   project_texts.forEach((_, index) => {
-    stickyIds.push("red_" + index);
     stickyIds.push("green_" + index);
+    stickyIds.push("red_" + index);
+    
 
   })
 
 
-  const projects= [
+  const projects = [
 
         {   
             link: "Accessible_Oceans",
@@ -108,7 +109,6 @@ function Homepage() {
 
   const heroImage = <div style={header_style} className={'light'}>
           <div className="heroImage">
-            <img alt="Emily in her graduation robes looking forward and smiling." style={{width:"50%", maxWidth: "256px", minWidth: "150px", objectFit: "contain"}} src="emily.png"/>
           <div style={{alignContent: "center"}}>
             <h1 style={{paddingBottom: "8px", margin:"0px"}}>HELLO! I'M EMILY!</h1>
             {/* <h4  style={{padding: "0px", margin:"0px"}} className="subtitle">I'm a designer, researcher, and developer.</h4> */}

@@ -3,9 +3,11 @@ import Homepage from './Pages/Homepage';
 import { useLocation, useRoutes } from "react-router-dom";
 import Resume from './Pages/Resume';
 import { AnimatePresence, motion, type Variant } from "framer-motion";
-import ProjectPage from './Pages/ProjectPage';
 import AboutMe from './Pages/AboutMe';
 import Projects from './Pages/Projects';
+import AccessibleOceans from './Pages/ProjectPages/AccessibleOceans';
+import ScottyU from './Pages/ProjectPages/ScottyU';
+import AccessiblePGH from './Pages/ProjectPages/AccessiblePGH.tsx';
 
 function App() {
 
@@ -25,7 +27,11 @@ const location = useLocation();
             { index: true,
               element: <Projects/>},
              { path: 'Accessible_Oceans',
-              element: <ProjectPage project="Accessible_Oceans"/>},
+              element: <AccessibleOceans/>},
+              { path: 'ScottyU',
+              element: <ScottyU/>},
+              { path: 'AccessiblePGH',
+              element: <AccessiblePGH/>}
           ]
         }, 
         {

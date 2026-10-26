@@ -48,6 +48,7 @@ function ProjectButton(props : Props)
         borderWidth: "4px",
         padding: "12px",
         borderStyle: "solid",
+        
     };
 
 

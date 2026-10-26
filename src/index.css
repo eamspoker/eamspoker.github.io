@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+
 @font-face {
   font-family: 'SFC-Slemans';
   src: local('SFC-Slemans'), url(fonts/SFC-Slemans.woff) format('woff');
@@ -11,27 +13,32 @@
 }
 
 
+
 :root {
   --bg-color: #fcf8ef;
   --accent-color: #A85410;
   --text-color: #445822;
   --header-font: 'SFC-Slemans', Courier, monospace;
-  --body-font: 'Figtree', Helvetica, sans-serif;
+  --body-font:  "IBM Plex Mono", Helvetica, sans-serif;
 }
 
-
+* {
+    border-color: var(--text-color) !important;;
+}
 
 body {
   background-color: var(--bg-color);
   
-  font-family: var(--body-font);
-  font-weight: 500;
-  color: var(--text-color);
+  font-family: "IBM Plex Mono";
+  /* font-family: var(--body-font); */
+  font-weight: 400;
+  font-style: normal;
 
   margin: 0px;
-  font-size: 1.25rem;
-  line-height: 2rem;
+  font-size: 1rem;
+  line-height: 1.5rem;
   padding: 0px;
+
 
 
 }
@@ -43,12 +50,17 @@ h1 {
   font-size: 3rem;
   line-height: 4rem;
   text-transform: uppercase;
+  color: var(--text-color);
 
 }
 
 h2 {
   font-family: var(--header-font);
   text-transform: uppercase;
+  font-size: 2rem;
+  line-height: 2rem;
+  color: var(--text-color);
+  padding:0px;
 }
 
 h3 {
@@ -56,6 +68,7 @@ h3 {
   font-size: 1.75rem;
   line-height: 2rem;
   text-transform: uppercase;
+  color: var(--text-color);
   
 }
 
@@ -73,7 +86,6 @@ a {
 
 p {
   background-color: #fcf9f0;
-  /* color: black; */
   font-weight: 400;
   padding: 8px;
 }
@@ -90,7 +102,8 @@ td {
 .graph_paper {
     background-image: url("background.png");
     background-color: var(--bg-color); 
-    background-blend-mode: lighten; }
+    background-blend-mode: lighten; 
+  }
 
 .green_sticky {
     width: 360px;
@@ -134,6 +147,10 @@ td {
     .heroImage {
       display: block;
     }
+
+    img {
+      max-width: "100%";
+    }
 }
 
 .horizontal {
@@ -162,3 +179,27 @@ td {
     padding: 0;
     position: absolute;
 } */
+
+.callOutStyle {
+    padding: 16px;
+    border: 2px solid var(--text-color);
+    height: min-content;
+
+}
+
+
+.tabbar {
+  color: var(--text-color);
+  font-size: 1.25rem;
+}
+
+.no_bg {
+  background-color: transparent
+}
+
+img {
+  border-width: 2px;
+  border-style: solid;
+}
+
+
