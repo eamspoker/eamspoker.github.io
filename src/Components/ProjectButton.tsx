@@ -66,11 +66,11 @@ function ProjectButton(props : Props)
             <h2 style={{color: accent_color}}>{props.name}</h2>
             <h4 style={{color: third_color}}>{props.subtitle}</h4>
         <div style={{display: "flex", gap: "16px", justifyContent: "center"}}>
-        <div style={pillStyle}>
-            <p style={pillColor2}>{props.type}</p>
+        <div className="pill" style={pillStyle}>
+            <p className="pill" style={pillColor2}>{props.type}</p>
         </div>
-         <div style={pillStyle}>
-            <p style={pillColor}>{props.dates}</p>
+         <div className="pill" style={pillStyle}>
+            <p className="pill" style={pillColor}>{props.dates}</p>
         </div>
         </div>
         </div>

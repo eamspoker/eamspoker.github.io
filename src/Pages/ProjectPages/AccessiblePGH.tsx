@@ -24,7 +24,7 @@ function AccessiblePGH() {
         </p>
       ) : (
         <iframe
-          title="Emily Amspoker's UCRE reflection"
+          title="Emily's User-Centered Research and Evaluation Class reflection"
           src="assets\UCREReflection.html"
           style={{ border: 0, flex: 1, minHeight: "0", width: "100%" }}
 

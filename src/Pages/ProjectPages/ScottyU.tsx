@@ -43,7 +43,7 @@ function ScottyU () {
 
 <Grid container columnSpacing={3} rowSpacing={1}>
 <Grid size={{xs: 12, md: 8}} sx={{height: "min-content"}}> 
-       <iframe style={{border: "2px"}} width="100%" height="500px" src="https://www.youtube.com/embed/tF07qi-UCx8?si=kah_Vr1VLk77pmnk" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
+       <iframe title="ScottyU pitch video YouTube player" style={{border: "2px"}} width="100%" height="500px" src="https://www.youtube.com/embed/tF07qi-UCx8?si=kah_Vr1VLk77pmnk" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
     </Grid>
 <Grid size={{xs: 12, md: 4}}>
     <div style={callOutStyle2} className="graph_paper">
@@ -217,7 +217,7 @@ We created a high fidelity Figma prototype of a mobile game (along with a "techn
 <Grid size={{xs: 12, md: 8}}> 
 <h3 data-heading="Hi-Fi Prototype" dir="auto">Hi-Fi Prototype</h3>
 <Grid size={{xs: 12, md: 8}}> 
-    <iframe title="Changes from Mid to Hi Fi presentation" width="560" height="315" src="https://www.youtube.com/embed/dQ3ljwqVHck?si=VP_Bz8lJpiaBgrUC" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
+    <iframe title="Changes from Mid to Hi Fi presentation YouTube Player" width="560" height="315" src="https://www.youtube.com/embed/dQ3ljwqVHck?si=VP_Bz8lJpiaBgrUC" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
    <p><i>Presentation summarizing changes from Mid to Hi-Fi prototype.</i></p>
 </Grid>
 

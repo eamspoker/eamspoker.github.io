@@ -1,205 +1,169 @@
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
-
-@font-face {
-  font-family: 'SFC-Slemans';
-  src: local('SFC-Slemans'), url(fonts/SFC-Slemans.woff) format('woff');
-}
-
-@font-face {
-  font-family: 'Figtree';
-  /* src: local('Figtree-VariableFont_wght'), url(fonts/Figtree-VariableFont_wght.woff) format('woff'); */
-  src: local('Figtree-VariableFont_wght'), url(fonts/Figtree-VariableFont_wght.ttf) format('truetype');
-  font-weight: 100 900;
-}
-
-
+/* Google Fonts Import: EB Garamond (Editorial Serif) & Roboto (Clean Sans-Serif) */
+@import url('https://googleapis.com');
 
 :root {
-  --bg-color: #fcf8ef;
-  --accent-color: #A85410;
-  --text-color: #445822;
-  --header-font: 'SFC-Slemans', Courier, monospace;
-  --body-font:  "IBM Plex Mono", Helvetica, sans-serif;
+  /* Neutral Surface & Typography Tokens */
+  --bg-color: #FCFBF9;           /* Soft off-white to prevent glare */
+  --surface-color: #FFFFFF;      /* Clean container background */
+  --text-primary: #1A1A1A;       /* High-contrast primary text */
+  --text-secondary: #4A4A4A;     /* Muted body copy */
+  --border-color: #E2E2E2;       /* Subtle neutral borders */
+
+  /* Categorical 4-Color Square Palette (Design System) */
+  --accent-design: #C67B89;     /* Muted Rose — Design */
+  --accent-cs: #8B9A74;         /* Muted Sage — Computer Science */
+  --accent-research: #895839;   /* Warm Rust — Research */
+  --accent-projects: #809ECB;   /* Soft Slate — Work & Milestones */
+  --accent-primary: #1A1A1A;    /* Default brand accent */
+
+  /* Font Family Definitions */
+  --header-font: 'EB Garamond', Georgia, serif;
+  --body-font: 'Roboto', -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
 
-* {
-    border-color: var(--text-color) !important;;
-}
-
+/* Global Reset & Base Typography */
 body {
   background-color: var(--bg-color);
-  
-  font-family: "IBM Plex Mono";
-  /* font-family: var(--body-font); */
+  color: var(--text-primary);
+  font-family: var(--body-font);
   font-weight: 400;
-  font-style: normal;
-
-  margin: 0px;
   font-size: 1rem;
-  line-height: 1.5rem;
-  padding: 0px;
-
-
-
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
 }
 
-
+/* Typographic Hierarchy */
+h1, h2, h3 {
+  font-family: var(--header-font);
+  color: var(--text-primary);
+  font-weight: 600;
+  margin-top: 0;
+  text-transform: none; /* Softens aggressive uppercase titles */
+}
 
 h1 {
-  font-family: var(--header-font);
-  font-size: 3rem;
-  line-height: 4rem;
-  text-transform: uppercase;
-  color: var(--text-color);
-
+  font-size: 3.25rem;
+  line-height: 3.75rem;
+  letter-spacing: -0.01em;
 }
 
 h2 {
-  font-family: var(--header-font);
-  text-transform: uppercase;
-  font-size: 2rem;
-  line-height: 2rem;
-  color: var(--text-color);
-  padding:0px;
+  font-size: 2.25rem;
+  line-height: 2.75rem;
 }
 
 h3 {
-  font-family: var(--header-font);
   font-size: 1.75rem;
-  line-height: 2rem;
-  text-transform: uppercase;
-  color: var(--text-color);
-  
+  line-height: 2.25rem;
 }
 
 h4 {
   font-family: var(--body-font);
-  color: var(--accent-color);
+  color: var(--accent-primary);
   font-weight: 500;
-  font-size: 1.25rem;
+  font-size: 1rem;
   line-height: 1.5rem;
-}
-
-a {
-  color: inherit;
+  letter-spacing: 0.05em;
 }
 
 p {
-  background-color: #fcf9f0;
-  font-weight: 400;
-  padding: 8px;
+  color: var(--text-secondary);
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 1.25rem;
+  padding: 0; /* Removed hard-coded #fcf9f0 box fills to eliminate background clutter */
 }
 
+a {
+  color: var(--accent-primary);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease-in-out;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Structured Layout Components */
 td {
-  background-color: #fcf9f0;
-  /* color: black; */
+  background-color: var(--surface-color);
+  color: var(--text-primary);
   padding: 16px;
-  border-width: 2px;
-  border-style: solid;
+  border: 1px solid var(--border-color);
 }
 
-
-.graph_paper {
-    background-image: url("background.png");
-    background-color: var(--bg-color); 
-    background-blend-mode: lighten; 
-  }
-
-.green_sticky {
-    width: 360px;
-    background-image: url("green_sticky.png");
-    background-size: contain;
-    color: var(--text-color);
-
+.callOutStyle {
+  padding: 20px;
+  background-color: var(--surface-color);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
 }
 
-.red_sticky {
-   
-    background-image: url("red_sticky.png");
-    color: var(--accent-color);
+.generic {
+  border: 2px solid var(--accent-primary);
 }
 
+.research {
+    border-left: 4px solid var(--accent-research);
+}
 
-.hamburger {
-    display: none;
+.design {
+    border-left: 4px solid var(--accent-design);
+}
+
+.computer_science {
+    border-left: 4px solid var(--accent-cs);
+}
+
+.tabbar {
+  color: var(--text-primary);
+  font-family: var(--body-font);
+  font-size: 1.125rem;
+  font-weight: 500;
 }
 
 .tabItems {
-      display: flex;
+  display: flex;
+  gap: 24px;
 }
+
 .heroImage {
-  padding: 8px; 
-    margin: 0px;
-    display: flex;
-    justify-content: flex-start;
-    gap: 56px
-
-}
-@media only screen and (max-width: 600px) {
-    .hamburger {
-        display: block;
-    }
-
-    .tabItems {
-      display: none;
-    }
-
-    .heroImage {
-      display: block;
-    }
-
-    img {
-      max-width: "100%";
-    }
-}
-
-.horizontal {
-      display: flex;
-    justify-content: flex-start;
-}
-
-.sr-only {
-    clip: rect(1px, 1px, 1px, 1px);
-    clip-path: inset(50%);
-    height: 1px;
-    width: 1px;
-    margin: -1px;
-    overflow: hidden;
-    padding: 0;
-    position: absolute;
-  } 
-
-/* .react-pdf__Page__textContent, .react-pdf__Page__annotations  {
-  clip: rect(1px, 1px, 1px, 1px);
-    clip-path: inset(50%);
-    height: 1px;
-    width: 1px;
-    margin: -1px;
-    overflow: hidden;
-    padding: 0;
-    position: absolute;
-} */
-
-.callOutStyle {
-    padding: 16px;
-    border: 2px solid var(--text-color);
-    height: min-content;
-
-}
-
-
-.tabbar {
-  color: var(--text-color);
-  font-size: 1.25rem;
-}
-
-.no_bg {
-  background-color: transparent
+  padding: 16px 0;
+  margin: 0;
+  display: flex;
+  justify-content: flex-start;
+  gap: 48px;
 }
 
 img {
-  border-width: 2px;
-  border-style: solid;
+  border: 1px solid var(--border-color);
+  max-width: 100%;
+  height: auto;
 }
 
+/* Category Signaling Classes */
+.tag-design { border-left: 4px solid var(--accent-design); }
+.tag-cs { border-left: 4px solid var(--accent-cs); }
+.tag-research { border-left: 4px solid var(--accent-research); }
+.tag-projects { border-left: 4px solid var(--accent-projects); }
 
+  .hamburger {
+    display: none;
+  }
+
+/* Responsive Navigation */
+@media only screen and (max-width: 600px) {
+  .hamburger {
+    display: block;
+  }
+
+  .tabItems {
+    display: none;
+  }
+
+  .heroImage {
+    flex-direction: column;
+    gap: 24px;
+  }
+}

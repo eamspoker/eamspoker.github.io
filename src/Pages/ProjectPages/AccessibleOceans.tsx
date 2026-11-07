@@ -43,7 +43,7 @@ function AccessibleOceans () {
 
 <Grid container columnSpacing={3} rowSpacing={1}>
 <Grid size={{xs: 12, md: 8}} sx={{height: "min-content"}}> 
-       <iframe width="100%" height="500px" src="https://embed.figma.com/deck/dDEWF2J1ODCV1LgxMPm0IS/A-Sanctuary-in-Sound-Overview?node-id=1-140&viewport=-98%2C-70%2C0.48&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1&embed-host=share" allowFullScreen></iframe>
+       <iframe title="A Sanctuary in Sound Summary Figma Presentation" width="100%" height="500px" src="https://embed.figma.com/deck/dDEWF2J1ODCV1LgxMPm0IS/A-Sanctuary-in-Sound-Overview?node-id=1-140&viewport=-98%2C-70%2C0.48&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1&embed-host=share" allowFullScreen></iframe>
     </Grid>
 <Grid size={{xs: 12, md: 4}}>
     <div style={callOutStyle2} className="graph_paper">

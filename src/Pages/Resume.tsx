@@ -24,7 +24,7 @@ function Resume() {
         </Grid>
 
         <Grid size={{xs: 12, md: 8}}>          
-        <iframe src="https://drive.google.com/file/d/1-51K77RGPFXJFReirkw-aYuY12bJXxdW/preview" 
+        <iframe title="Emily's resume in PDF form" src="https://drive.google.com/file/d/1-51K77RGPFXJFReirkw-aYuY12bJXxdW/preview" 
         width="100%" max-width="100%" height="800px" allow="autoplay"></iframe>
         </Grid>
 

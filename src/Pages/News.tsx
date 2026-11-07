@@ -1,5 +1,3 @@
-import Card from '../Components/Card';
-import Stacked2Item from '../Components/Stacked2Item';
 
 
 function News() {

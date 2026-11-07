@@ -1,3 +1,4 @@
+import Grid from "@mui/material/Grid";
 import ProjectButton from "../Components/ProjectButton";
 import Tabbar from "../Components/Tabbar";
 import WrapperPage from "./WrapperPage";
@@ -59,23 +60,25 @@ function Projects()
     ]; 
     
     const projectButtons = projects.map ( (project, index) => {
-                return <li style={{margin:"16px"}}>
+                return <Grid size={{xs: 12}}>
                 <ProjectButton colors={index%2} link={project.link} name={project.name} subtitle={project.subtitle} dates={project.dates}  type={project.type}/>
-                </li>;
+                </Grid>;
             });
    return(<div>
     <Tabbar page={2}/>
     <WrapperPage>
-    <div style={{padding:" 32px"}}>
-    <h1 style={{paddingBottom: "px", margin:"0px"}}>Projects</h1>
+        <Grid sx={{margin: "32px"}} container spacing={2}>
 
-
-        <ul style={{listStyleType:"none"}}>
+    <Grid size={{xs: 12}}>
+        <h1 style={{paddingBottom: "px", margin:"0px"}}>Projects</h1>
+    </Grid>
+        
             {
                 projectButtons
             }
-        </ul>
-    </div>
+        
+
+    </Grid>
     </WrapperPage>
 </div>);
 }

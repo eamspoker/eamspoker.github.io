@@ -1,178 +1,91 @@
-import * as React from 'react';
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import SchoolIcon from '@mui/icons-material/School';
+import GitHubIcon from '@mui/icons-material/GitHub';
+import { Grid } from '@mui/material';
+import { IconButton } from '@mui/material';
 import Tabbar from '../Components/Tabbar';
-import {DragDropProvider} from '@dnd-kit/react';
-import { useState } from 'react';
-import StickyNote from '../Components/StickyNote';
-import Board from '../Components/Board';
-import Grid from '@mui/material/Grid';
-import Stacked2Item from '../Components/Stacked2Item';
-import Right2Item from '../Components/Right2Item';
-import News from './News';
 import WrapperPage from './WrapperPage';
 
 
 function Homepage() {
 
+  const descriptionStyle = {
+    textAlign: "left" as const,
+    marginLeft: 30,
+    marginRight: 30,
+    marginTop: 10,
+    marginBottom: 10,
+    fontSize: "1.5em"
+  }
 
-  React.useEffect(() => {
-    window.scrollTo(0, 0)
-  }, [])
-
-  const header_style = {
-    padding: "48px",
-    borderWidth: "0px 0px 2px 0px",
-    borderStyle: "none none solid none",
-   };
-
-  const sticky_container_style = {
-    padding: "48px",
-    borderWidth: "0px 0px 2px 0px",
-    borderStyle: "none none solid none"
-
-   };
-
-   const hero_image_style = {
-    padding: "8px", 
-    margin:"0px",
-    display: "flex",
-    justifyContent: "flex-start",
-    gap: "56px"
-
-   };
+  const paperStyle = {
+    borderRadius: "2%",
+    padding: "10px",
+  }
 
 
-  const [project, setProject] = useState("");
-  const [problem, setProblem] = useState("");
-  const project_texts = ["accessible museum exhibits", "a location-based game", "component libraries"];
-  const problem_texts = ["people can play with data through sounds", "freshmen navigate their first year", "artists engineer their own tools"];
-  const stickyIds : Array<string> = [];
-  project_texts.forEach((_, index) => {
-    stickyIds.push("green_" + index);
-    stickyIds.push("red_" + index);
-    
 
-  })
+  const aboutMeStyle = {
+    backgroundColor: "transparent !important",
 
 
-  const projects = [
-
-        {   
-            link: "Accessible_Oceans",
-            name: "A Sanctuary in Sound",
-            subtitle: "Designing multimodal museum displays @ Georgia Tech",
-            dates: "Fall 2025 - Fall 2026",
-            type: "Academic Research"
-        },
-
-        {   
-            link: "ScottyU",
-            name: "ScottyU",
-            subtitle: "Designing a game for the first-year experience @ CMU",
-            dates: "Spring 2025",
-            type: "Design Capstone"
-        },
-      // {   
-        //     link: "pixar",
-        //     name: "Xscripts & Webapp Components",
-        //     subtitle: "Designing a game for the first-year experience @ CMU",
-        //     dates: "Summer 2026",
-        //     type: "Industry Internship"
-        // }
-        ];
-
-
-  function onDropStickyNote(event : any){
-                    console.log(event.operation.target?.id);
-                    if (event.canceled) 
-                    {
-                      return;
-                    }
-                    if(event.operation.target?.id === 'projects' &&
-                      (event.operation.source?.id as string).split("_")[0] == "red")
-                    {
-                      setProject(event.operation.source?.id as string);
-                      setProblem("green_" + (event.operation.source?.id as string).split("_")[1]);
-                    } else if(event.operation.target?.id === 'problems' &&
-                      (event.operation.source?.id as string).split("_")[0] == "green")
-                    {
-                      setProblem(event.operation.source?.id as string);
-                      setProject("red_" + (event.operation.source?.id as string).split("_")[1]);
-                    } else if (!event.operation.target
-                      && (event.operation.source?.id === project ||
-                        event.operation.source?.id === problem)
-                      )
-                      {
-                        setProject("");
-                        setProblem("");
-                      }
-    }
-
-  const heroImage = <div style={header_style} className={'light'}>
-          <div className="heroImage">
-          <div style={{alignContent: "center"}}>
-            <h1 style={{paddingBottom: "8px", margin:"0px"}}>HELLO! I'M EMILY!</h1>
-            {/* <h4  style={{padding: "0px", margin:"0px"}} className="subtitle">I'm a designer, researcher, and developer.</h4> */}
-            <h4> I'm currently working on my <b><a href="https://www.cc.gatech.edu/degree-programs/master-science-computer-science" target='_'>Master's Degree in Computer Science</a></b> with a specialization in <b><a href="https://omscs.gatech.edu/specialization-human-computer-interaction" target="_">Human-Computer Interaction</a></b> at <b>Georgia Tech.</b></h4>
-          </div>
-          </div>
-        </div>;
-
-  const stickies = <div style={sticky_container_style} className='graph_paper'>
-          <div style={hero_image_style}>
-          <div style={{alignContent: "center"}}>
-
-                <DragDropProvider
-                  onDragEnd={onDropStickyNote}
-                >
-                  <Grid container spacing={2}>
-                  <Grid size={{xs: 12, md: 6}}>
-                  <h3 style={{padding: "0px", margin:"0px"}} >I've investigated how</h3>                 
-                    
-
-                    <Board id="problems">
-                     {problem && <StickyNote color="green" id={problem} text={problem_texts[parseInt(problem.split("_")[1])]}/>}
-                    </Board>
-                    </Grid>
-
-                    <Grid size={{xs: 12, md: 6}}>
-
-                      <h3 style={{padding: "0px", margin:"0px", color:"#A85410"}} >In order to create</h3>                 
-
-
-                    <Board id="projects">
-                     {project && <StickyNote color="red" id={project} text={project_texts[parseInt(project.split("_")[1])]}/>}
-                    </Board>
-
-                    </Grid>
-
-                    <Grid size={{xs: 12, md: 12}}>
-
-                    <Grid container spacing={2}>
-                    {stickyIds.map((id) => {
-                    let color = id.split("_")[0];
-                    let index = parseInt(id.split("_")[1]);
-                    let text = color === "green" ? problem_texts[index] : project_texts[index]; 
-                    return (id != project) && (id != problem) && <Grid size={{xs: 12, md: 6, lg:4, xl: 3}}><StickyNote id={id} key={id} color={color} text={text}/></Grid>
-                  })} 
-                  </Grid>  
-
-                  </Grid>  
-                  </Grid>
-
-                </DragDropProvider>
-          </div>
-          </div>
-        </div>;
+  }
 
   return (
-    <div className="Homepage">
-        <Tabbar page={0} horizontal={true}/>
-        <WrapperPage>
-        <Right2Item smallItem={<News/>}
-          bigItem={<div> {heroImage} {stickies} </div>} />
-         </WrapperPage>
+<div>
+  <Tabbar page={1}/>
+  <WrapperPage>
 
-    </div>
+       
+   <Grid container spacing={2} sx={{margin: "16px"}} >
+
+    <Grid sx={{ mt: 'auto' }} size={{xs: 12, lg:4}}>
+      <img alt="Emily in her graduation robes looking forward and smiling." src={"/emily.jpg"}></img>
+      </Grid>
+    
+      <Grid size={{xs: 12, lg:8}}>
+        <h1 className="no_bg" >
+          Hi! My name is Emily.
+        </h1 >
+
+      <div className='callOutStyle generic'>
+        
+<p className="no_bg" >I'm originally from Denver, Colorado. I'm currently a Master's of Computer Science student at Georgia Tech. I'm specializing in Human-Computer Interaction and am grateful to be supported by the National Science Foundation's Graduate Research Fellowship.
+</p>
+ 
+<p className="no_bg"  >
+In my practice, I draw on <b>user-centered research and design methods</b> to create technology that is <b>accessible, effective, and equitable</b>.
+        </p>
+        <Grid container spacing={1}>
+        <Grid size={{md: 1}}>
+          <IconButton aria-label="Linkedin.com" style={{ color: 'black', backgroundColor: 'transparent' }}
+      onClick={() => window.open("https://www.linkedin.com/in/emily-amspoker-52944b18a/")}>
+
+      <LinkedInIcon fontSize="large" />
+      </IconButton>
+        </Grid>
+        <Grid size={{md: 1}}>
+           <IconButton aria-label="Github.com" style={{ color: 'black', backgroundColor: 'transparent' }}
+      onClick={() => window.open("https://github.com/eamspoker")}>
+
+      <GitHubIcon fontSize="large"/>
+      </IconButton>
+        </Grid>
+        <Grid size={{md: 1}}>
+           <IconButton aria-label="Google Scholar" 
+      style={{ color: 'black', backgroundColor: 'transparent' }} onClick={() => window.open("https://scholar.google.com/citations?user=1ZFxIeoAAAAJ&hl=en&oi=ao")}>
+      <SchoolIcon fontSize="large" />
+      </IconButton>
+        </Grid>
+        </Grid>
+      </div>
+      </Grid>
+      
+   </Grid>
+    
+
+      </WrapperPage>
+      </div> 
   );
 }
 

@@ -11,7 +11,7 @@ type Props = {
 function Tabbar(props: Props) {
 
    const {page} = props;
-   const pages: string[] = ["home", "about me", "projects", "resume"];
+   const pages: string[] = ["home", "projects", "resume"];
    const selectedStyle = {
     fontWeight: "bold",
     textDecoration: "none"
@@ -59,6 +59,23 @@ function Tabbar(props: Props) {
 
  
    
+   const LinkItemDropdown = (index : number) => {
+       const content = pages[index];
+       const content_nospaces = content.split(" ").join("_");
+       const link = content == "home" ? "/" : "/" + content_nospaces.split("/")[0].toLowerCase();
+       if (index == page)
+       {
+        return (
+            <Link to={link} style={selectedStyle}><div style={dropdownItemStyle}>{content}</div></Link>);
+        
+       } else {
+        
+
+           return (
+            <Link style={unSelectedStyle} to={link}><div style={dropdownItemStyle}>{content}</div></Link>
+   );
+       }
+   }
    const LinkItem = (index : number) => {
        const content = pages[index];
        const content_nospaces = content.split(" ").join("_");
@@ -97,7 +114,7 @@ function Tabbar(props: Props) {
         <div className="tabbar" style={tabbarStyle}>
 
         <div style={nameStyle}>
-        <h3>EMILY AMSPOKER</h3>
+        <h3>Emily Amspoker</h3>
         </div>
 
         <div className="tabItems" style={tabItemsStyle}>
@@ -109,9 +126,6 @@ function Tabbar(props: Props) {
         </div>
         <div style={tabItemStyle}>
             {LinkItem(2)}
-        </div>
-        <div style={tabItemStyle}>
-            {LinkItem(3)}
         </div>
         </div>
 
@@ -126,18 +140,9 @@ function Tabbar(props: Props) {
         </div>
     </div>
     <div id="menu" style={dropdownMenuStyle}>
-                    <div style={dropdownItemStyle}>
-                        {LinkItem(0)}
-                    </div>
-                    <div style={dropdownItemStyle}>
-                        {LinkItem(1)}
-                    </div>
-                    <div style={dropdownItemStyle}>
-                        {LinkItem(2)}
-                    </div>
-                    <div style={dropdownItemStyle}>
-                        {LinkItem(3)}
-                    </div>
+                        {LinkItemDropdown(0)}
+                        {LinkItemDropdown(1)}
+                        {LinkItemDropdown(2)}
                 </div>
         </div>
               
